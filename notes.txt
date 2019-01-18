@@ -1,0 +1,32 @@
+8/21/2017
+import clr
+clr.AddReference("System.Runtime.InteropServices")
+import System.Runtime.InteropServices
+WordCom = System.Runtime.InteropServices.Marshal.GetActiveObject("Word.Application")
+-- Struggles --
+GetActiveObject works, however, I cannot do Wordcom.Documents.Open(ExampleFile) as open does not exist in this context (it did in the win32api)
+System.Runtime.InteropServices.Marshal.GetObject(ExampleFile) does not work, as this doesn't exist in that context either. 
+Good Reading
+https://msdn.microsoft.com/en-us/library/office/aa679806(v=office.11).aspx
+https://docs.microsoft.com/en-us/dotnet/framework/interop/how-to-generate-interop-assemblies-from-type-libraries
+https://msdn.microsoft.com/en-us/library/system.runtime.interopservices(v=vs.110).aspx
+
+8/3/2017
+Major issues when using win32com.client and pyinstaller / py2exe
+Bookmarks for issue
+http://p-s.co.nz/wordpress/pyinstaller-and-win32com/
+
+
+
+
+
+7/18/2017
+Looking for way to compare The registry and AD information. 
+
+
+
+7/17/2017
+*Needed way to get the Active Directory User. Tim Golden's active_directory.py and the win32api were not going to easily work
+*decided to use clr.
+ clr.AddReference("System.DirectoryServices")
+
